@@ -30,6 +30,10 @@ def hello():
 @app.route('/apex')
 def apex_roulette():
     return 'Not implemented yet'
+    
+@app.route('/blackops')
+def black_ops():
+    return 'Does this work?'
 
 if __name__ == '__main__':
     # This is used when running locally only. When deploying to Google App
