@@ -1,39 +1,94 @@
-# Copyright 2018 Google LLC
-#
-# Licensed under the Apache License, Version 2.0 (the "License");
-# you may not use this file except in compliance with the License.
-# You may obtain a copy of the License at
-#
-#     http://www.apache.org/licenses/LICENSE-2.0
-#
-# Unless required by applicable law or agreed to in writing, software
-# distributed under the License is distributed on an "AS IS" BASIS,
-# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-# See the License for the specific language governing permissions and
-# limitations under the License.
 
-# [START gae_python38_app]
-# [START gae_python3_app]
 from flask import Flask
+import random
+_NUMBER_OF_MODIFIERS_ = 2
 
 
-# If `entrypoint` is not defined in app.yaml, App Engine will look for an app
-# called `app` in `main.py`.
+
 app = Flask(__name__)
 
 
 @app.route('/')
 def hello():
     """Return a friendly HTTP greeting."""
-    return 'The start of a widely accessible strat roulette page'
+    output = 'This app is designed to generate a selection of random challenges for different games'
+    output += '<br>'
+    output += '<b>Challenges</b> can be made up of two separate parts: <b>Challenges</b> and <b>Modifiers</b>. There can be up to 2 <b>Modifiers</b> but there must be 1 <b>Challenges</b>'
+    output += '<br>'
+    output += '<b>Challenges</b> are problems or restrictions large enough that they have to be dealt with all game or can severly effect gameplay'
+    output += '<br>'
+    output += '<b>Modifiers</b> are problems or restrictions that arent big on their own or can be ignored for most of the game'
+    output += '<br><br>'
+    output += 'There are a few games I plan to implement this for, but for now I only have Black ops 2 with Apex legends coming soon'
+    output += '<br>'
+    output += 'You can access the different games by modifying the URL above and adding one of the games listed in the brackets: [ blackops2 ] after the "/"'
+    output += '<br>'
+    output += 'For example, you would put "https://stratroulette-377821.ue.r.appspot.com/blackops2" in the URL for COD: Black Ops 2'
+    return output
 
 @app.route('/apex')
 def apex_roulette():
     return 'Not implemented yet'
     
-@app.route('/blackops')
+@app.route('/blackops2')
 def black_ops():
-    return 'Does this work?'
+    output = ""
+    NumMods = 0
+    # Challenge Initialization Section
+    chall = [("Put a Sock on it","Your team must play with socks over their hands like gloves")]
+    chall.append(("Sabotage","The last team that lost gets to change 2 settings for each winner without their knowledge"))
+    chall.append(("Wild West","Your team cannot Aim Down Sights and must hipfire or melee only"))
+    chall.append(("Oh, like chatGPT!", "Add a veteran bot to the opposing team, if any member of your team ends the game with fewer kills than the bot, they must take a shot"))
+    chall.append(("Team Building Exercise", "Every callout or sentence MUST include a compliment to your teammate. Failure to compliment means you must take a shot or put down your controller"))
+    chall.append(("Buck Wild","Shotguns only"))
+    chall.append(("Seven Shots, Maybe One Kill", "Snipers only"))
+    chall.append(("Runnin Dry","Once you see an enemy, you must start shooting immediately and cannot stop until the mag is empty"))
+    chall.append(("Slow & Steady","Someone on your team must use Minimum sensitivity"))
+    chall.append(("Fast & Ready", "Someone on your team must use Maximum Sensitivity"))
+    chall.append(("Low & Slow", "Your team can only kill people while prone or dolphin diving"))
+    chall.append(("Reaction Testing","The opposing team may call out 'Marco' at any time and all members of your team must respond with 'Polo' or else their next kill has to be a melee kill"))
+    chall.append(("Gun Game on a Budget","You can only get 1 kill with a weapon before you must swap it for one on the ground or swap loadout if you die"))
+    chall.append(("Human Centipede", "All members of your team must remain crouched and touching for the entire game, IRL or ingame"))
+    
+    # Modifier Initialization Section
+    mods = [("Leg Injury","Your team cannot sprint")]
+    mods.append(("Claim Your Voice","Nobody on your team can speak until they personally have gotten a Melee Kill"))
+    mods.append(("I thought we were friends","Every callout or sentence MUST include an insult to your teammate. Failure to insult means you must take a shot or put down your controller for 15 seconds"))
+    mods.append(("Fashion Over Form","Your weapon MUST use a sight with a custom and unorothodox dot e.g Smiley Face"))
+    mods.append(("Perk 1 famine", "You cannot have anything in perk slot 1"))
+    mods.append(("Perk 2 famine", "You cannot have anything in perk slot 2"))
+    mods.append(("Perk 3 famine", "You cannot have anything in perk slot 3"))
+    mods.append(("The Taj Special","Someone on your team must use Taj's controller"))
+    mods.append(("Hypersensitive","Increase your sensitivity by four"))
+    mods.append(("Dulled senses","Decrease your sensitivity by two"))
+    mods.append(("Compulsive Reloader","You must reload after every kill, failure to do so is a shot or 15 second timeout"))
+    mods.append(("Big game","LMG's only"))
+    mods.append(("Vanilla","No attachements"))
+    
+    
+    # Only 2 Modifiers Allowed
+    while NumMods < _NUMBER_OF_MODIFIERS_:
+        pick = random.randrange(1,len(chall)+len(mods))
+        if pick < len(chall):
+            # Pop instead of access to prevent duplicate Modifiers/Challenges
+            temp = chall.pop(pick-1)
+            output += "<b>Title: </b>"+temp[0] +"<br>"
+            output += "<b>Description: </b>"+temp[1] +"<br>"
+            return output
+        else:
+            # Pop instead of access to prevent duplicate Modifiers/Challenges
+            temp = mods.pop(pick-len(chall)-1)
+            output += "<b>Title: </b>[Modifier] "+temp[0] +"<br>"
+            output += "<b>Description: </b>"+temp[1] +"<br>"
+            output += "<br>"
+            NumMods += 1
+    pick = random.randrange(1,len(chall))
+    # Pop instead of access to prevent duplicate Modifiers/Challenges
+    temp = chall.pop(pick-1)
+    output += "<b>Title: </b>"+temp[0] +"<br>"
+    output += "<b>Description: </b>"+temp[1] +"<br>"
+    return output
+
 
 if __name__ == '__main__':
     # This is used when running locally only. When deploying to Google App
