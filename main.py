@@ -21,7 +21,7 @@ def hello():
     output += '<br><br>'
     output += 'There are a few games I plan to implement this for, but for now I only have Black ops 2 with Apex legends coming soon'
     output += '<br>'
-    output += 'You can access the different games by modifying the URL above and adding one of the games listed in the brackets: [ blackops2 ] after the "/"'
+    output += 'You can access the different games by modifying the URL above and adding one of the games listed in the brackets: [ <a href="https://stratroulette-377821.ue.r.appspot.com/blackops2"> blackops2 </a> ] after the "/" or by clicking one of their links'
     output += '<br>'
     output += 'For example, you would put "https://stratroulette-377821.ue.r.appspot.com/blackops2" in the URL for COD: Black Ops 2'
     return output
@@ -49,6 +49,7 @@ def black_ops():
     chall.append(("Reaction Testing","The opposing team may call out 'Marco' at any time and all members of your team must respond with 'Polo' or else their next kill has to be a melee kill"))
     chall.append(("Gun Game on a Budget","You can only get 1 kill with a weapon before you must swap it for one on the ground or swap loadout if you die"))
     chall.append(("Human Centipede", "All members of your team must remain crouched and touching for the entire game, IRL or ingame"))
+    chall.append(("Big game","LMG's only"))
     
     # Modifier Initialization Section
     mods = [("Leg Injury","Your team cannot sprint")]
@@ -62,7 +63,6 @@ def black_ops():
     mods.append(("Hypersensitive","Increase your sensitivity by four"))
     mods.append(("Dulled senses","Decrease your sensitivity by two"))
     mods.append(("Compulsive Reloader","You must reload after every kill, failure to do so is a shot or 15 second timeout"))
-    mods.append(("Big game","LMG's only"))
     mods.append(("Vanilla","No attachements"))
     
     
