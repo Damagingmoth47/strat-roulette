@@ -21,7 +21,7 @@ def hello():
     output += '<br><br>'
     output += 'There are a few games I plan to implement this for, but for now I only have Black ops 2 with Apex legends coming soon'
     output += '<br>'
-    output += 'You can access the different games by modifying the URL above and adding one of the games listed in the brackets: [ blackops2 ] after the "/"'
+    output += 'You can access the different games by modifying the URL above and adding one of the games listed in the brackets: [ <a href="https://stratroulette-377821.ue.r.appspot.com/blackops2"> blackops2 </a> ] after the "/" or by clicking one of their links'
     output += '<br>'
     output += 'For example, you would put "https://stratroulette-377821.ue.r.appspot.com/blackops2" in the URL for COD: Black Ops 2'
     return output
@@ -49,10 +49,20 @@ def black_ops():
     chall.append(("Reaction Testing","The opposing team may call out 'Marco' at any time and all members of your team must respond with 'Polo' or else their next kill has to be a melee kill"))
     chall.append(("Gun Game on a Budget","You can only get 1 kill with a weapon before you must swap it for one on the ground or swap loadout if you die"))
     chall.append(("Human Centipede", "All members of your team must remain crouched and touching for the entire game, IRL or ingame"))
+    chall.append(("Big game","LMG's only"))
+    chall.append(("Speed Kills","You must use a weapon that has the rapid fire attachment equipped"))
+    chall.append(("Pick a member of your team to be the VIP, they may only use a pistol and every time they die, you must take a shot or set your controller down for 15 seconds"))
+    chall.append(("Quite the view","The opposing team gets to pick where your team stands to play the match. Your portion of the screen must be visible in some way shape or form from where you are standing e.g reflection"))
+    chall.append(("Red Light, Green light","Someone who is not playing the game gains the ability to call Red Light and Green Light. Your team must stop moving on a Red light and may only continue on a green light"))
+    chall.append(("Primitive Player","One member on your team is only allowed to use special weapons e.g Riot Shield, Rocket Launcher, etc"))
+    chall.append(("Let's change it up","Set the gamemode to Kill Confirmed instead of Team Deathmatch"))
+    chall.append(("Sharpshooter","Set the Gamemode to Sharpshooter"))
+    chall.append(("Localized Chaos","Set the gamemode to Hardpoint"))
+    
     
     # Modifier Initialization Section
     mods = [("Leg Injury","Your team cannot sprint")]
-    mods.append(("Claim Your Voice","Nobody on your team can speak until they personally have gotten a Melee Kill"))
+    mods.append(("Claim Your Voice","Nobody on your team can speak until they personally have gotten a Melee Kill. ALL Team members take a shot if this rule is violated"))
     mods.append(("I thought we were friends","Every callout or sentence MUST include an insult to your teammate. Failure to insult means you must take a shot or put down your controller for 15 seconds"))
     mods.append(("Fashion Over Form","Your weapon MUST use a sight with a custom and unorothodox dot e.g Smiley Face"))
     mods.append(("Perk 1 famine", "You cannot have anything in perk slot 1"))
@@ -61,9 +71,18 @@ def black_ops():
     mods.append(("The Taj Special","Someone on your team must use Taj's controller"))
     mods.append(("Hypersensitive","Increase your sensitivity by four"))
     mods.append(("Dulled senses","Decrease your sensitivity by two"))
-    mods.append(("Compulsive Reloader","You must reload after every kill, failure to do so is a shot or 15 second timeout"))
-    mods.append(("Big game","LMG's only"))
-    mods.append(("Vanilla","No attachements"))
+    mods.append(("Compulsive Reloader","You must reload immediately after every kill, failure to do so is a shot or 15 second timeout"))
+    mods.append(("Vanilla","No attachements unless specified by a challenge or modifier"))
+    mods.append(("Double the Trouble", "Double any punishments from challenges or modifiers"))
+    mods.append(("Sore Losers", "If your team loses this game, Your team must take 3 shots collectively, divided however you want"))
+    mods.append(("Rags to Riches","Each member of your team must get a kill with a melee THEN a pistol before they may play normally"))
+    mods.append(("Dead weight", "The best player on your team must use the Legacy Southpaw controller layout"))
+    mods.append(("Heavy is the Head that Wears the Crown","Whoever has the most kills on your team at the end of the game, must take a shot"))
+    mods.append(("Sugar Rush","Your team must be moving at all times, standing still for longer than 1s for any reason is a shot"))
+    mods.append(("Wasted space","Your loadout must include the maximum amount of tactical and lethal equipment possible"))
+    mods.append(("WW1","Your team must use bolt action or semi automatic weapons"))
+    mods.append(("Blue on Blue","Enable hardcore mode"))
+    mods.append(("Up is Down","All players on your team must invert their look inversion setting"))
     
     
     # Only 2 Modifiers Allowed
