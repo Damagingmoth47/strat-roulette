@@ -7,6 +7,10 @@ _NUMBER_OF_MODIFIERS_ = 2
 
 app = Flask(__name__)
 
+def roll(max_num_to_roll):
+    pick = random.randrange(1,max_num_to_roll)
+    return pick
+
 
 @app.route('/')
 def hello():
@@ -28,7 +32,40 @@ def hello():
 
 @app.route('/apex')
 def apex_roulette():
-    return 'Not implemented yet'
+    output = ""
+    NumMods = 0
+    # Challenge Initialization Section
+    chall = [("Put a Sock on it","Your team must play with socks over their hands like gloves")]
+    
+    
+    
+    # Modifier Initialization Section
+    mods = [("Leg Injury","Your team cannot sprint")]
+    
+    
+    
+    # Only 2 Modifiers Allowed
+    while NumMods < _NUMBER_OF_MODIFIERS_:
+        pick = roll(1,len(chall)+len(mods))
+        if pick < len(chall):
+            # Pop instead of access to prevent duplicate Modifiers/Challenges
+            temp = chall.pop(pick-1)
+            output += "<b>Title: </b>"+temp[0] +"<br>"
+            output += "<b>Description: </b>"+temp[1] +"<br>"
+            return output
+        else:
+            # Pop instead of access to prevent duplicate Modifiers/Challenges
+            temp = mods.pop(pick-len(chall)-1)
+            output += "<b>Title: </b>[Modifier] "+temp[0] +"<br>"
+            output += "<b>Description: </b>"+temp[1] +"<br>"
+            output += "<br>"
+            NumMods += 1
+    pick = random.randrange(1,len(chall))
+    # Pop instead of access to prevent duplicate Modifiers/Challenges
+    temp = chall.pop(pick-1)
+    output += "<b>Title: </b>"+temp[0] +"<br>"
+    output += "<b>Description: </b>"+temp[1] +"<br>"
+    return output
     
 @app.route('/blackops2')
 def black_ops():
@@ -87,7 +124,7 @@ def black_ops():
     
     # Only 2 Modifiers Allowed
     while NumMods < _NUMBER_OF_MODIFIERS_:
-        pick = random.randrange(1,len(chall)+len(mods))
+        pick = roll(1,len(chall)+len(mods))
         if pick < len(chall):
             # Pop instead of access to prevent duplicate Modifiers/Challenges
             temp = chall.pop(pick-1)
