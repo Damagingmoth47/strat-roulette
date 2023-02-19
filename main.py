@@ -51,7 +51,7 @@ def hello():
     output += '<br><br>'
     output += 'There are a few games I plan to implement this for, but for now I only have Black ops 2 with Apex legends coming soon'
     output += '<br>'
-    output += 'You can access the different games by modifying the URL above and adding one of the games listed in the brackets: [ <a href="https://stratroulette-377821.ue.r.appspot.com/blackops2"> blackops2 </a> ] after the "/" or by clicking one of their links'
+    output += 'You can access the different games by modifying the URL above and adding one of the games listed in the brackets: [ <a href="https://stratroulette-377821.ue.r.appspot.com/blackops2"> blackops2 </a> - <a href="https://stratroulette-377821.ue.r.appspot.com/apex"> Apex </a> ] after the "/" or by clicking one of their links'
     output += '<br>'
     output += 'For example, you would put "https://stratroulette-377821.ue.r.appspot.com/blackops2" in the URL for COD: Black Ops 2'
     return output
