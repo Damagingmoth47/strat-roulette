@@ -51,7 +51,7 @@ def hello():
     output += '<br><br>'
     output += 'There are a few games I plan to implement this for, but for now I only have Black ops 2 with Apex legends coming soon'
     output += '<br>'
-    output += 'You can access the different games by modifying the URL above and adding one of the games listed in the brackets: [ <a href="https://stratroulette-377821.ue.r.appspot.com/blackops2"> blackops2 </a> ] after the "/" or by clicking one of their links'
+    output += 'You can access the different games by modifying the URL above and adding one of the games listed in the brackets: [ <a href="https://stratroulette-377821.ue.r.appspot.com/blackops2"> blackops2 </a> - <a href="https://stratroulette-377821.ue.r.appspot.com/apex"> Apex </a> ] after the "/" or by clicking one of their links'
     output += '<br>'
     output += 'For example, you would put "https://stratroulette-377821.ue.r.appspot.com/blackops2" in the URL for COD: Black Ops 2'
     return output
@@ -201,6 +201,7 @@ def black_ops():
     chall.append(("Let's change it up","Set the gamemode to Kill Confirmed instead of Team Deathmatch"))
     chall.append(("Sharpshooter","Set the Gamemode to Sharpshooter"))
     chall.append(("Localized Chaos","Set the gamemode to Hardpoint"))
+    chall.append(("Rags to Riches","Each member of your team must get a kill with a melee THEN a pistol before they may play normally"))
     
     
     # Modifier Initialization Section
@@ -218,7 +219,6 @@ def black_ops():
     mods.append(("Vanilla","No attachements unless specified by a challenge or modifier"))
     mods.append(("Double the Trouble", "Double any punishments from challenges or modifiers"))
     mods.append(("Sore Losers", "If your team loses this game, Your team must take 3 shots collectively, divided however you want"))
-    mods.append(("Rags to Riches","Each member of your team must get a kill with a melee THEN a pistol before they may play normally"))
     mods.append(("Dead weight", "The best player on your team must use the Legacy Southpaw controller layout"))
     mods.append(("Heavy is the Head that Wears the Crown","Whoever has the most kills on your team at the end of the game, must take a shot"))
     mods.append(("Sugar Rush","Your team must be moving at all times, standing still for longer than 1s for any reason is a shot"))
