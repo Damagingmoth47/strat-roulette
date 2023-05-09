@@ -29,11 +29,11 @@ def forbidden():
                   "Rifle","Longbow","Kraber","Sentinel","Eva","Mastiff","Mozambique","Peacekeeper","RE-45","P2020",
                   "Wingman","Light","Heavy","Energy","Sniper","Shotgun","Ammo","White","Blue","Purple","Gold","Red",
                   "Cracked","Cell","Medkit","Battery","Syringe","One","Fuck","Shit","Damnit"]
-    w1 = roll(len(apex_words))
-    w2 = roll(len(apex_words))
-    w3 = roll(len(apex_words))
-    w4 = roll(len(apex_words))
-    w5 = roll(len(apex_words))
+    w1 = apex_words.pop(roll(len(apex_words)))
+    w2 = apex_words.pop(roll(len(apex_words)))
+    w3 = apex_words.pop(roll(len(apex_words)))
+    w4 = apex_words.pop(roll(len(apex_words)))
+    w5 = apex_words.pop(roll(len(apex_words)))
     words += w1 + ","+w2+","+w3+","+w4+","+w5
     return words
 
@@ -49,7 +49,7 @@ def hello():
     output += '<br>'
     output += '<b>Modifiers</b> are problems or restrictions that arent big on their own or can be ignored for most of the game'
     output += '<br><br>'
-    output += 'There are a few games I plan to implement this for, but for now I only have Black ops 2 with Apex legends coming soon'
+    output += 'There are a few games I plan to implement this for, but for now I only have Black ops 2 and Apex with Dead By Daylight coming after'
     output += '<br>'
     output += 'You can access the different games by modifying the URL above and adding one of the games listed in the brackets: [ <a href="https://stratroulette-377821.ue.r.appspot.com/blackops2"> blackops2 </a> - <a href="https://stratroulette-377821.ue.r.appspot.com/apex"> Apex </a> ] after the "/" or by clicking one of their links'
     output += '<br>'
