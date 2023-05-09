@@ -20,12 +20,12 @@ def forbidden():
     words = ""
     apex_words = ["Battle","Royale","Bloodhound","Gibraltar","Gibby","Lifeline","Pathfinder","Path","Wraith",
                   "Bangalore","Caustic","Mirage","Octane","Wattson","Crypto","Revenant","Loba","Rampart","Horizon",
-                  "Fuse","Valkyrie","Seer","Ash","Maggie","Newcastle","Scan","Ping","Dome","Ult","Barrage","Drone",
+                  "Fuse","Valkyrie","Seer","Ash","Maggie","Newcastle","Vantage","Catalyst","Scan","Ping","Dome","Ult","Barrage","Drone",
                   "Heal","Supply","Drop","Grapple","Zipline","Phase","Portal","Passive","Smoke","Oscar","Mike","Squad",
                   "Enemy","Gas","Trap","Trap","Grenade","Clone","Stim","Jumppad","Fence","EMP","Silence","Totem",
                   "Bracelet","Teleport","Wall","Minigun","Sheila","Lift","Knuckle","Cluster","Jets","Rockets","Drill",
                   "Barrier","Rez","Revive","Lava","Havoc","Flatline","Hemlok","301","Alternator","Prowler","99","Volt",
-                  "CAR","Devotion","L-Star","Spitfire","Rampage","G7","Triple","Take","Snake","30-30","Bow","Charge",
+                  "CAR","Devotion","L-Star","Spitfire","Rampage","G7","Triple","Take","Snake","30-30","Nemesis","Bow","Charge",
                   "Rifle","Longbow","Kraber","Sentinel","Eva","Mastiff","Mozambique","Peacekeeper","RE-45","P2020",
                   "Wingman","Light","Heavy","Energy","Sniper","Shotgun","Ammo","White","Blue","Purple","Gold","Red",
                   "Cracked","Cell","Medkit","Battery","Syringe","One","Fuck","Shit","Damnit"]
@@ -34,7 +34,7 @@ def forbidden():
     w3 = apex_words.pop(roll(len(apex_words)))
     w4 = apex_words.pop(roll(len(apex_words)))
     w5 = apex_words.pop(roll(len(apex_words)))
-    words += w1 + ","+w2+","+w3+","+w4+","+w5
+    words += w1 + ", "+w2+", "+w3+", "+w4+", "+w5
     return words
 
 
